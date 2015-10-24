@@ -1,0 +1,8 @@
+nltk
+beautifulsoup4
+matplotlib
+jieba
+pandas
+numpy
+scipy
+ipython[notebook]
