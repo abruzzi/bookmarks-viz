@@ -1,2 +1,5 @@
 nlp/
 .ipynb_checkpoints/
+bookmarks.count.csv
+bookmarks.count.json
+scripts/vendor/

@@ -1,6 +1,7 @@
 nltk
 beautifulsoup4
 matplotlib
+wxPython
 jieba
 pandas
 numpy
