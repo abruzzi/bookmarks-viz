@@ -11,6 +11,16 @@ body {
 
 .line {
   fill: none;
-  stroke: #F24A98;
+  stroke: #00C3E0;
   stroke-width: 1px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: #3C7CCC;
 }
