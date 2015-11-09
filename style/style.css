@@ -2,6 +2,11 @@ body {
   font: 10px sans-serif;
 }
 
+#chart {
+  width: 1000px;
+  margin: 20px auto;
+}
+
 .axis path,
 .axis line {
   fill: none;

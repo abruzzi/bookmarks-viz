@@ -6,7 +6,7 @@ $(function() {
     var parseDate = d3.time.format("%Y-%m-%d").parse;
 
     var bisectDate = d3.bisector(function(d) { return d.date; }).left,
-        format = function(d) { return "Bookmark Count: " + d3.format(",f")(d); };
+        format = function(d) { return d3.format(",f")(d.close)+' bookmarks on '+d.date.toDateString(); };
 
     var x = d3.time.scale()
         .range([0, width]);
@@ -26,7 +26,7 @@ $(function() {
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.close); });
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#chart").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -89,7 +89,7 @@ $(function() {
             d1 = data[i],
             d = x0 - d0.date > d1.date - x0 ? d1 : d0;
         focus.attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")");
-        focus.select("text").text(format(d.close));
+        focus.select("text").text(format(d));
       }
 
     });
