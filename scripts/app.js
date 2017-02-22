@@ -1,7 +1,7 @@
 $(function() {
     var margin = {top: 20, right: 20, bottom: 30, left: 50},
         width = 960 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        height = 400 - margin.top - margin.bottom;
 
     var parseDate = d3.time.format("%Y-%m-%d").parse;
 
@@ -20,9 +20,13 @@ $(function() {
 
     var yAxis = d3.svg.axis()
         .scale(y)
-        .orient("left");
+        .orient("left")
+        .innerTickSize(-width)
+        .outerTickSize(0)
+        .tickPadding(10);
 
     var line = d3.svg.line()
+        .interpolate('basis')
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.close); });
 
@@ -43,10 +47,6 @@ $(function() {
       x.domain(d3.extent(data, function(d) { return d.date; }));
       y.domain(d3.extent(data, function(d) { return d.close; }));
 
-      svg.append("path")
-              .datum(data)
-              .attr("class", "line")
-              .attr("d", line);
 
       svg.append("g")
           .attr("class", "x axis")
@@ -62,6 +62,13 @@ $(function() {
           .attr("dy", ".71em")
           .style("text-anchor", "end")
           .text("Bookmarks Count");
+
+
+      svg.append("path")
+              .datum(data)
+              .attr("class", "line")
+              .attr("d", line);
+
 
       var focus = svg.append("g")
         .attr("class", "focus")
