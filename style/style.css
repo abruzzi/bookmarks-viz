@@ -10,7 +10,7 @@ body {
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: black;
   shape-rendering: crispEdges;
 }
 
@@ -20,6 +20,7 @@ body {
   stroke-width: 1px;
 }
 
+/*
 .overlay {
   fill: none;
   pointer-events: all;
@@ -28,4 +29,33 @@ body {
 .focus circle {
   fill: none;
   stroke: #3C7CCC;
+}*/
+
+
+.circle-2013 {
+  storke-width: 0;
+  opacity: .7;
+  fill: #f9d057;
+}
+
+.circle-2014 {
+  storke-width: 0;
+  opacity: .7;
+  fill: #f29e2e;
+}
+
+.circle-2015 {
+  storke-width: 0;
+  opacity: .7;
+  fill: #e76818;
+}
+
+.circle-2016 {
+  storke-width: 0;
+  opacity: .7;
+  fill: #d7191c;
+}
+
+.tick line{
+  opacity: 0.2;
 }
